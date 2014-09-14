@@ -16,9 +16,67 @@ background-image: url('images/congruent_outline.png');
      </div>
    </div> -->
 
+  <%
 
+    @UIVnum = 0
 
+    python_cmd = Escape.shell_command(['python', "#{Rails.root}/lib/assets/test.py"]).to_s
+system python_cmd
 
+    f = File.open("#{Rails.root}/public/UVIdata.txt", "r")
+    f.each_line do |line|
+      @UIVnum = line
+    end
+    f.close
+
+    #result = Rails.root + "lib/assets/test.py"
+    #result.testPrint()
+
+    #require "rubypython"
+
+#RubyPython.start # start the Python interpreter
+#RubyPython.run() {
+  #print("TESTETSTTSTSTT")
+
+#}
+  #converter = RubyPython.new
+  #converter.import("sys")
+  #RubyPython.import("requests")
+  #RubyPython.import("re")
+  #RubyPython.import("bs4")
+  #Conversion.ptorObject(Rails.root + "lib/assets/test.py")
+  #RubyPython.run(){
+  #print("@@@@@@@1")
+  #RubyPython.Type("test")
+  #bs = from bs4 RubyPython.import(from bs4 "BeautifulSoup")
+  #tes = exec(Rails.root + "lib/assets/test.py")
+
+  #def uvIndex(zipcode)
+  #  print("@@@@@@@4")
+  #  url = 'http://iaspub.epa.gov/enviro/uv_search_v2'
+  #  payload = {'zipcode' => zipcode}
+  #  r = requests.get(url, params=payload)
+  #  soup = bs4.BeautifulSoup(r.text)
+  #  index = soup.find('img', 'alt' => re.compile('UVI'))
+  #  print index['alt'][-1]
+  #  print("@@@@@@@2")
+
+  #uvIndex(21128)
+
+  #print("@@@@@@@3")
+#end
+
+#result.rubify
+
+#testRes = RubyPython.import(result)
+#p cPickle.dumps("Testing RubyPython.").rubify
+#RubyPython.ptorObject("test.py").rubify
+
+#RubyPython.stop # stop the Python interpreter
+#}
+  %>
+
+  <%= @UIVnum.inspect %>
 
   <div class="row">
     <div class="large-12 columns">
