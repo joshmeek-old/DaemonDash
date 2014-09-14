@@ -12,12 +12,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20140914010736) do
-  
+
   create_table "homes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "LocationString"
-  
   end
 
   create_table "locations", force: true do |t|
