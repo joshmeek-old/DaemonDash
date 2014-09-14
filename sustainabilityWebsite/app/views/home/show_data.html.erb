@@ -1,0 +1,31 @@
+<%
+  file = open("../data.json")
+  json = file.read
+  parsed = JSON.parse(json)
+
+  pollenCount = parsed["pollen"]
+  uvLevel = parsed["uv"]
+  airQuality = parsed["air"]
+  senator1Name = parsed["senator1"]["name"]
+  senator1Phone = parsed["senator1"]["phone"]
+  senator1Email = parsed["senator1"]["email"]
+  senator2Name = parsed["senator2"]["name"]
+  senator2Phone = parsed["senator2"]["phone"]
+  senator2Email = parsed["senator2"]["email"]
+
+%>
+
+<div>
+  <%=pollenCount%>
+  <%=uvLevel%>
+  <%=airQuality%>
+  <p></p>
+
+    <%=senator1Name%>
+    <%=senator1Phone%>
+    <%=senator1Email%>
+    <%=senator2Name%>
+    <%=senator2Phone%>
+    <%=senator2Email%>
+
+</div>

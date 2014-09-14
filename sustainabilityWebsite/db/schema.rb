@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20140914112431) do
     t.datetime "updated_at"
     t.string   "LocationString"
     t.integer  "zipcode"
-
   end
 
   create_table "locations", force: true do |t|
