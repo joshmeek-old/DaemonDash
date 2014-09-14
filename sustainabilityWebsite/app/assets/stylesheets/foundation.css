@@ -62,6 +62,7 @@ body {
 }
 
 #levels {
+  padding-top: 50px;
   position: fixed;
   top: 50%;
   left: 50%;
