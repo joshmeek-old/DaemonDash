@@ -53,6 +53,27 @@ body {
   background-repeat: repeat;
   }
 
+#zip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 800%;
+}
+
+#zipForm {
+  padding-top: 65px;
+  border: 0;
+  outline: none;
+  outline-offset: 0;
+  font-size: 800%;
+  position: fixed;
+}
+
+#zipButton {
+  padding-top: 65px;
+}
+
 a:hover {
   cursor: pointer; }
 
