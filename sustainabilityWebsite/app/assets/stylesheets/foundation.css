@@ -61,16 +61,32 @@ body {
   font-size: 800%;
 }
 
+#levels {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #zipForm {
   padding-top: 65px;
+  width: 100%;
   border: 0;
   outline: none;
   outline-offset: 0;
   position: fixed;
 }
 
+* {
+overflow: scroll;  //Change this to scroll or auto
+margin: 0;
+padding: 0;
+}
+
 #zipButton {
-  padding-top: 65px;
+  padding-top: 70px;
+  padding-left: 150px;
+
 }
 
 a:hover {

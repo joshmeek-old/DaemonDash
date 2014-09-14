@@ -1,9 +1,7 @@
-#!/usr/bin/env python
 #for date variable, format is yyyy-mm-dd
 import requests
 import re
 import json
-import sys
 from bs4 import BeautifulSoup as bs
 
 def uvIndex(zipcode):
@@ -63,12 +61,5 @@ def main(zipcode, date):
     state, d['air'] = aqIndex(zipcode, date)
     d['pollen'] = pIndex(zipcode)
     d['senator1'], d['senator2'] = sIndex(state)
-    f = open('data.json', 'w')
-    json.dump(d, f)
-    f.close()
-
-def use(args*):
-    print('lol')
-    return args[1](args[2], args[3])
-main(sys.argv[1], sys.argv[2])
-use(sys.argv)
+    with open('data.json', 'w') as f:
+        json.dump(d, f)

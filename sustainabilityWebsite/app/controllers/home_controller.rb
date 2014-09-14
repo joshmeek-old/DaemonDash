@@ -15,8 +15,9 @@ class HomeController < ApplicationController
   end
   def show_data
       #binding.pry
-      python_cmd = Escape.shell_command(['python', "#{Rails.root}/URLGrabber.py", params[:home][:zipcode], '2014-09-14']).to_s
+      python_cmd = Escape.shell_command(['python', "#{Rails.root}/public/URLGrabber.py", params[:home][:zipcode], '2014-09-14']).to_s
   system python_cmd
+      #binding.pry
   end
   def read
 
