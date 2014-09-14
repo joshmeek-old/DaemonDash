@@ -16,9 +16,22 @@ background-image: url('images/congruent_outline.png');
      </div>
    </div> -->
 
+  <%
+
+    @UIVnum = 0
+
+    python_cmd = Escape.shell_command(['python', "#{Rails.root}/public/test.py"]).to_s
+system python_cmd
+    f = File.open("#{Rails.root}/public/UVIdata.txt", "r")
+    f.each_line do |line|
+      @UIVnum = line
+    end
+    f.close
 
 
+  %>
 
+  <!--<%= @UIVnum.inspect %>-->
 
   <div class="row">
     <div class="large-12 columns">
@@ -30,7 +43,7 @@ background-image: url('images/congruent_outline.png');
             <!--
               PUT RAILS STUFF HERE
             -->
-            <input type="text">
+            <input type="text" name="zipcode">
           </div>
           <div id="zipButton" class="small-2 columns">
             <a href="#" class="button postfix">Go</a>
@@ -39,8 +52,6 @@ background-image: url('images/congruent_outline.png');
       <div>
       <!--<img src="http://placehold.it/1000x400&text=[ img 1 ]"/>-->
     </div>
-
-
 
     </div>
   </div>
