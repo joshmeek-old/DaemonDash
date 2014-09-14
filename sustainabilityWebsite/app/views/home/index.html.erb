@@ -35,17 +35,19 @@ system python_cmd
 
       <div id="zip">
       Zip Code
-        <form>
+        <%=form_for :home, :url => {:action => "show_data", :id => @zipcode} do |f|%>
           <div id="zipForm" class="large-12 columns">
-            <!--
-              PUT RAILS STUFF HERE
-            -->
-            <input type="text" name="zipcode">
+
+         	 <%=f.text_field(:zipcode) %>
+
           </div>
+
           <div id="zipButton" class="small-2 columns">
-            <a href="#" class="button postfix">Go</a>
+
+             <%=f.submit("GO")%>
+
           </div>
-        </form>
+          <%end%>
       <div>
     </div>
   </div>
