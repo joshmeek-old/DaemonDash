@@ -39,7 +39,7 @@ body {
   font-size: 100%; }
 
 body {
-  background: blue;
+  background: white;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -48,7 +48,10 @@ body {
   font-style: normal;
   line-height: 150%;
   position: relative;
-  cursor: default; }
+  cursor: default;
+  background: url('../images/green_cup.png');
+  background-repeat: repeat;
+  }
 
 a:hover {
   cursor: pointer; }
