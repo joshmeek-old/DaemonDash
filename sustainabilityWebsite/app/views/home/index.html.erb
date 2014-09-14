@@ -1,4 +1,9 @@
 <h1> Welcome to the Sustainability Website! </h1>
 <style>
-body{ background-color:red}
+	body {
+		background-color: red
+	}
+<% @home.each do |article| %>
+<%= article.zipcode %>
+<% end %>
 </style>

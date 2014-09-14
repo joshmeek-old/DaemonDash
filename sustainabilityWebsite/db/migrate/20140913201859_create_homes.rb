@@ -4,5 +4,6 @@ class CreateHomes < ActiveRecord::Migration
 
       t.timestamps
     end
+    
   end
 end
