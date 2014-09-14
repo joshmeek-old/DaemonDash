@@ -20,9 +20,8 @@ background-image: url('images/congruent_outline.png');
 
     @UIVnum = 0
 
-    python_cmd = Escape.shell_command(['python', "#{Rails.root}/lib/assets/test.py"]).to_s
+    python_cmd = Escape.shell_command(['python', "#{Rails.root}/public/test.py"]).to_s
 system python_cmd
-
     f = File.open("#{Rails.root}/public/UVIdata.txt", "r")
     f.each_line do |line|
       @UIVnum = line
