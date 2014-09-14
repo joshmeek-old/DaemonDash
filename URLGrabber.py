@@ -1,5 +1,7 @@
+#for date variable, format is yyyy-mm-dd
 import requests
 import re
+import json
 from bs4 import BeautifulSoup as bs
 
 def uvIndex(zipcode):
@@ -8,7 +10,7 @@ def uvIndex(zipcode):
     r = requests.get(url, params=payload)
     soup = bs(r.text)
     index = soup.find('img', {'alt' : re.compile('UVI')})
-    print index['alt'][-1]
+    return index['alt'][-1]
 
 def aqIndex(zipcode, date):
     #zipcode, date = 20852, '2014-09-13'
@@ -19,4 +21,45 @@ def aqIndex(zipcode, date):
     quality = aqi[0]['Category']['Name']
     return state, quality
 
+def pIndex(zipcode):
+    r = requests.get('http://www.claritin.com/weatherpollenservice/weatherpollenservice.svc/getforecast/' + str(zipcode))
+    claritin = r.text
+    start = claritin.index(':[') + 2
+    end = start + claritin[start:].index(',')
+    pollen = float(claritin[start: end])
+    string = 'Pollen level is '
+    if (pollen >= 0):
+        if (pollen < 2.5):
+            string += 'LOW'
+        elif (pollen < 4.9):
+            string += 'LOW-MEDIUM'
+        elif (pollen <= 7.3):
+            string += 'MEDIUM'
+        elif (pollen <= 9.7):
+            string += 'MEDIUM-HIGH'
+        elif (pollen <= 12):
+            string += 'HIGH'
+        else:
+            string += 'APOCALYPTIC'
+    return string
+
+def sIndex(state):
+    f = open('senators4.txt', 'r')
+    data = json.load(f)
+    senator1 = {'name' : data[state][0][0],
+                'phone' : data[state][0][1],
+                'email' : data[state][0][2]}
+    senator2 = {'name' : data[state][1][0],
+                'phone' : data[state][1][1],
+                'email' : data[state][1][2]}
+    return senator1, senator2
+
+def main(zipcode, date):
+    d = {}
+    d['uv'] = uvIndex(zipcode)
+    state, d['air'] = aqIndex(zipcode, date)
+    d['pollen'] = pIndex(zipcode)
+    d['senator1'], d['senator2'] = sIndex(state)
+    with open('data.json', 'w') as f:
+        json.dump(d, f)
     
