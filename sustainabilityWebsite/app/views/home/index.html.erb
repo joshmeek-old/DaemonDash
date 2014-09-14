@@ -28,54 +28,10 @@ system python_cmd
     end
     f.close
 
-    #result = Rails.root + "lib/assets/test.py"
-    #result.testPrint()
 
-    #require "rubypython"
-
-#RubyPython.start # start the Python interpreter
-#RubyPython.run() {
-  #print("TESTETSTTSTSTT")
-
-#}
-  #converter = RubyPython.new
-  #converter.import("sys")
-  #RubyPython.import("requests")
-  #RubyPython.import("re")
-  #RubyPython.import("bs4")
-  #Conversion.ptorObject(Rails.root + "lib/assets/test.py")
-  #RubyPython.run(){
-  #print("@@@@@@@1")
-  #RubyPython.Type("test")
-  #bs = from bs4 RubyPython.import(from bs4 "BeautifulSoup")
-  #tes = exec(Rails.root + "lib/assets/test.py")
-
-  #def uvIndex(zipcode)
-  #  print("@@@@@@@4")
-  #  url = 'http://iaspub.epa.gov/enviro/uv_search_v2'
-  #  payload = {'zipcode' => zipcode}
-  #  r = requests.get(url, params=payload)
-  #  soup = bs4.BeautifulSoup(r.text)
-  #  index = soup.find('img', 'alt' => re.compile('UVI'))
-  #  print index['alt'][-1]
-  #  print("@@@@@@@2")
-
-  #uvIndex(21128)
-
-  #print("@@@@@@@3")
-#end
-
-#result.rubify
-
-#testRes = RubyPython.import(result)
-#p cPickle.dumps("Testing RubyPython.").rubify
-#RubyPython.ptorObject("test.py").rubify
-
-#RubyPython.stop # stop the Python interpreter
-#}
   %>
 
-  <%= @UIVnum.inspect %>
+  <!--<%= @UIVnum.inspect %>-->
 
   <div class="row">
     <div class="large-12 columns">
@@ -87,7 +43,7 @@ system python_cmd
             <!--
               PUT RAILS STUFF HERE
             -->
-            <input type="text">
+            <input type="text" name="zipcode">
           </div>
           <div id="zipButton" class="small-2 columns">
             <a href="#" class="button postfix">Go</a>
@@ -96,8 +52,6 @@ system python_cmd
       <div>
       <!--<img src="http://placehold.it/1000x400&text=[ img 1 ]"/>-->
     </div>
-
-
 
     </div>
   </div>
