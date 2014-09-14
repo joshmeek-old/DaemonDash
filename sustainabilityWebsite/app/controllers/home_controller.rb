@@ -4,14 +4,17 @@ class HomeController < ApplicationController
   end
   
   def new
-    @homes=Home.new
+    @home=Home.new
   end
   def index
-    
+    @home=Home.new 
   end
       
   def search
-  
+    
+  end
+  def show_data
+      binding.pry
   end
   def read
     
