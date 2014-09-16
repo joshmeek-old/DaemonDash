@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-Men in the Middle : Daemon Dash 2014
-====
-The Sustainable Sustainability Webapp
--------------
-Joshua Meek
-Lucas Cheng
-Danny 
-Dustin
-=======
 Daemon Dash Hackathon
 =========
 
@@ -68,4 +58,3 @@ MIT
 [Foundation]:http://foundation.zurb.com/index.html
 [SQLite 3.0]:http://www.sqlite.org/
 
->>>>>>> origin/Josh
